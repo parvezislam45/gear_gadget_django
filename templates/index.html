@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% block content %}
+<div
+  id="carouselExampleCrossfade"
+  class="relative"
+  data-te-carousel-init
+  data-te-ride="carousel">
+  <!--Carousel indicators-->
+  <div
+    class="absolute inset-x-0 bottom-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+    data-te-carousel-indicators>
+    <button
+      type="button"
+      data-te-target="#carouselExampleCrossfade"
+      data-te-slide-to="0"
+      data-te-carousel-active
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-current="true"
+      aria-label="Slide 1"></button>
+    <button
+      type="button"
+      data-te-target="#carouselExampleCrossfade"
+      data-te-slide-to="1"
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 2"></button>
+    <button
+      type="button"
+      data-te-target="#carouselExampleCrossfade"
+      data-te-slide-to="2"
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 3"></button>
+  </div>
+
+  <!--Carousel items-->
+  <div
+    class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+    <!--First item-->
+    <div
+      class="relative float-left -mr-[100%] w-full !transform-none opacity-0 transition-opacity duration-[100ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-fade
+      data-te-carousel-item
+      data-te-animation-init
+      data-te-carousel-active>
+        <div class="px-6 py-12 text-center md:px-12 lg:text-left bg-black">
+            <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
+              <div class="grid items-center gap-12 lg:grid-cols-2">
+                <div class="mt-12 lg:mt-0">
+                    <h1 class="mt-0 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-white">
+                        Heavy <br /><span class="text-white">on Features</span>
+                      </h1>
+                      <a class="mb-2 inline-block border-2 border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-xl font-bold uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-yellow-600 md:mr-2 md:mb-0"
+                      data-te-ripple-init data-te-ripple-color="light" href="#!" role="button">Shop</a>
+                </div>
+                <div class="mb-12 lg:mb-0 h-96">
+                  <img src="https://www.donanimhaber.com/images/images/haber/159467/src_340x1912xyeni-macbook-pro-modelleri-tanitildi-iste-turkiye-fiyatlari.jpg"
+                    class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--Second item-->
+    <div
+      class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[100ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-fade
+      data-te-carousel-item>
+      <div class="px-6 py-12 text-center md:px-12 lg:text-left bg-black">
+        <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
+          <div class="grid items-center gap-12 lg:grid-cols-2">
+            <div class="mt-12 lg:mt-0">
+                <h1 class="mt-0 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-white">
+                    Blast <br /><span class="text-white">Plast Fast</span>
+                  </h1>
+                  <a class="mb-2 inline-block border-2 border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-xl font-bold uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-yellow-600 md:mr-2 md:mb-0"
+                  data-te-ripple-init data-te-ripple-color="light" href="#!" role="button">Shop</a>
+            </div>
+            <div class="mb-12 lg:mb-0 h-96">
+              <img src="https://image.cnbcfm.com/api/v1/image/107114929-1662574328371-iphone-14-pro-colors.jpg?v=1690809732&w=1600&h=900"
+                class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Third item-->
+    <div
+      class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[100ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-fade
+      data-te-carousel-item>
+      <div class="px-6 py-12 text-center md:px-12 lg:text-left bg-black">
+        <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
+          <div class="grid items-center gap-12 lg:grid-cols-2">
+            <div class="mt-12 lg:mt-0">
+              <h1 class="mt-0 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-white">
+                Cool <br /><span class="text-white">Dude</span>
+              </h1>
+              <a class="mb-2 inline-block border-2 border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-xl font-bold uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-yellow-600 md:mr-2 md:mb-0"
+                      data-te-ripple-init data-te-ripple-color="light" href="#!" role="button">Shop</a>
+            </div>
+            <div class="mb-12 lg:mb-0 h-96">
+              <img src="https://9to5mac.com/wp-content/uploads/sites/6/2023/06/airpods-pro-2-apple-watch-series-8.jpg?quality=82&strip=all"
+                class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Carousel controls - prev item-->
+  <button
+    class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    type="button"
+    data-te-target="#carouselExampleCrossfade"
+    data-te-slide="prev">
+    <span class="inline-block h-8 w-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </span>
+    <span
+      class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+      >Previous</span
+    >
+  </button>
+  <!--Carousel controls - next item-->
+  <button
+    class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    type="button"
+    data-te-target="#carouselExampleCrossfade"
+    data-te-slide="next">
+    <span class="inline-block h-8 w-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+    </span>
+    <span
+      class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+      >Next</span
+    >
+  </button>
+</div>
+
+
+<section class="p-6 bg-black">
+	<div class="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
+		<div class="w-full h-96 px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2">
+			<img class='w-full h-80' src="https://fptshop.com.vn/Uploads/images/2015/Tin-Tuc/03/14/Apple_Watch(2).jpg" alt="">
+		</div>
+		<img src="https://source.unsplash.com/random/480x360" alt="" class="object-cover w-full h-96 rounded-md xl:col-span-3 dark:bg-gray-500">
+	</div>
+</section>
+{% endblock  %}

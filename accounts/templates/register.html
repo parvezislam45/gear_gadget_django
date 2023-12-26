@@ -1,0 +1,69 @@
+{% extends "base.html" %} 
+{% block content %}
+<!-- component -->
+<!-- Create by joker banny -->
+<div class="h-screen bg-indigo-100 flex justify-center items-center">
+  <div class="lg:w-2/5 md:w-1/2 w-2/3">
+    <form method="POST" class="bg-white p-10 rounded-lg shadow-lg min-w-full">
+        {% csrf_token %}
+      <h1 class="text-center text-2xl mb-6 text-gray-600 font-bold font-sans">
+        Formregister
+      </h1>
+      <div>
+        <label
+          class="text-gray-800 font-semibold block my-3 text-md"
+          for="username"
+          >Username</label
+        >
+        {{form.username}}
+      </div>
+      <div>
+        <label
+          class="text-gray-800 font-semibold block my-3 text-md"
+          for="email"
+          >Email</label
+        >
+        {{form.email}}
+      </div>
+      <div>
+        <label
+          class="text-gray-800 font-semibold block my-3 text-md"
+          for="password"
+          >Password</label
+        >
+        {{form.password1}}
+      <div>
+        <label
+          class="text-gray-800 font-semibold block my-3 text-md"
+          for="confirm"
+          >Confirm password</label
+        >
+        {{form.password2}}
+      </div>
+      <div>
+        <label
+          class="text-gray-800 font-semibold block my-3 text-md"
+          for="confirm"
+          >First Name</label
+        >
+        {{form.first_name}}
+      </div>
+      <div>
+        <label
+          class="text-gray-800 font-semibold block my-3 text-md"
+          for="confirm"
+          >Last Name</label
+        >
+        {{form.last_name}}
+      </div>
+      <button
+        type="submit"
+        class="w-full mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans"
+      >
+        Register
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

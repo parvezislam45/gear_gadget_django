@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Shopping Cart</h2>
+ 
+  {% if cart_items %}
+    <ul>
+      {% for item in cart_items %}
+        <li>{{ item.product.product_name}} - Quantity: {{ item.quantity }}</li>
+        <h1>{{ item.product.price}}</h1>
+        <h1>Total {{item.sub_total}}</h1>
+        <form action="{% url 'add_cart' item.product.id %}"method="POST">
+          {% csrf_token %}
+          <button class='btn btn-primary' type="submit">Plus</button>
+        </form>
+        <form action="{% url 'remove_cart_item' item.product.id %}">
+          {% csrf_token %}
+          <button class='btn btn-primary' type="submit">Minus</button>
+        </form>
+        <a href="{% url 'remove_cart' item.product.id %}">Remove</a>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Your cart is empty.</p>
+  {% endif %}
+   
+  <h1>Total {{total}}</h1>
+  <h1>Tax {{tax}}</h1>
+  <h1>Grand Total {{grand_total}}</h1>
+{% endblock  %}
