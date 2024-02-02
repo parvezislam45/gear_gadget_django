@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from cart.models import Cart,CartItem
 from .forms import OrderForm
 from .models import Payment, OrderProduct, Order
-# from .ssl import sslcommerz_payment_gateway
+from .ssl import sslcommerz_payment_gateway
 from store.models import Product
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
@@ -10,47 +10,47 @@ from django.utils.decorators import method_decorator
 
 
 
-# @method_decorator(csrf_exempt, name='dispatch')
-# def success_view(request):
-#     data = request.POST
-#     print('data -------', data)
-#     user_id = int(data['value_b']) 
-#     user = User.objects.get(pk=user_id)
-#     payment = Payment(
-#         user = user,
-#         payment_id =data['tran_id'],
-#         payment_method = data['card_issuer'],
-#         amount_paid = int(data['store_amount'][0]),
-#         status =data['status'],
-#     )
-#     payment.save()
-    
-#     # working with order model
-#     order = Order.objects.get(user=user, is_ordered=False, order_number=data['value_a'])
-#     order.payment = payment
-#     order.is_ordered = True
-#     order.save()
-#     cart_items = CartItem.objects.filter(user = user)
-    
-#     for item in cart_items:
-#         orderproduct = OrderProduct()
-#         product = Product.objects.get(id=item.product.id)
-#         orderproduct.order = order
-#         orderproduct.payment = payment
-#         orderproduct.user = user
-#         orderproduct.product = product
-#         orderproduct.quantity = item.quantity
-#         orderproduct.ordered = True
-#         orderproduct.save()
-
-#         # Reduce the quantity of the sold products
+@csrf_exempt
+def success_view(request):
+    if request.method == 'POST':
+        data = request.POST
+        user_id = int(data['value_b']) 
+        user = User.objects.get(pk=user_id)
         
-#         product.stock -= item.quantity # order complete tai stock theke quantity komay dilam
-#         product.save()
+        payment = Payment(
+            user=user,
+            payment_id=data['tran_id'],
+            payment_method=data['card_issuer'],
+            amount_paid=float(data['store_amount']),  # Convert to float instead of int
+            status=data['status'],
+            # Assuming created_at is auto-managed (e.g., auto_now_add=True)
+            # No need to explicitly set it; it will be automatically managed by Django
+        )
+        payment.save()
+        
+        order = Order.objects.get(user=user, is_ordered=False, order_number=data['value_a'])
+        order.payment = payment
+        order.is_ordered = True
+        order.save()
+        
+        cart_items = CartItem.objects.filter(user=user)
+        for item in cart_items:
+            order_product = OrderProduct(
+                order=order,
+                payment=payment,
+                user=user,
+                product=item.product,
+                quantity=item.quantity,
+                ordered=True
+            )
+            order_product.save()
 
-#     # Clear cart
-#     CartItem.objects.filter(user=user).delete()
-#     return redirect('cart')
+            product = Product.objects.get(id=item.product.id)
+            product.stock -= item.quantity
+            product.save()
+
+        CartItem.objects.filter(user=user).delete()
+        return redirect('cart') 
 
 
 def orderComplete(request):
@@ -81,5 +81,5 @@ def placeOrder(request):
             form.instance.order_number = saved_instance.id
             form.save()
             print(form)
-            # return redirect(sslcommerz_payment_gateway(request,  saved_instance.id, str(request.user.id), grand_total))
+            return redirect(sslcommerz_payment_gateway(request,  saved_instance.id, str(request.user.id), grand_total))
     return render(request,'place_order.html',{'cart_items' : cart_items, 'tax' : tax,'total' : total, 'grand_total' : grand_total})

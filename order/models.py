@@ -8,7 +8,7 @@ class Payment(models.Model):
     payment_method = models.CharField(max_length=100)
     amount_paid = models.IntegerField()
     status = models.CharField(max_length=100)
-    created_at = models.DateTimeField(auto_created=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     
 class Order(models.Model):

@@ -16,106 +16,8 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </div>
         </div>
-        {% comment %} <div class="rounded-md">
-            <form method="POST" action="">
-                <section>
-                    <h2 class="uppercase tracking-wide text-lg font-semibold text-white my-2">Shipping & Billing Information</h2>
-                    <div class="mb-3 bg-black shadow-lg rounded text-white">
-                        <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                            <span class="text-right px-2">First Name</span>
-                            <input name="first_name" class="focus:outline-none px-3" placeholder="Try Odinsson" required>
-                        </label>
-                        <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                            <span class="text-right px-2">Last Name</span>
-                            <input name="last_nam" class="focus:outline-none px-3" placeholder="Try Odinsson" require>
-                        </label>
-                        <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                            <span class="text-right px-2">Email</span>
-                            <input name="email" type="email" class="focus:outline-none px-3" placeholder="try@example.com" required>
-                        </label>
-                        <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                            <span class="text-right px-2">Phone</span>
-                            <input name="phone" class="focus:outline-none px-3" placeholder="10 Street XYZ 654">
-                        </label>
-                        <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                            <span class="text-right px-2">Address1</span>
-                            <input name="address1" class="focus:outline-none px-3" placeholder="San Francisco">
-                        </label>
-                        <label class="inline-flex w-2/4 border-gray-200 py-3">
-                            <span class="text-right px-2">Address2</span>
-                            <input name="address2" class="focus:outline-none px-3" placeholder="CA">
-                        </label>
-                        <label class="inline-flex w-2/4 border-gray-200 py-3">
-                            <span class="text-right px-2 xl:px-0 xl:text-none">Country</span>
-                            <input name="country" class="focus:outline-none px-3" placeholder="98603">
-                        </label>
-                        <label class="inline-flex w-2/4 border-gray-200 py-3">
-                            <span class="text-right px-2 xl:px-0 xl:text-none">State</span>
-                            <input name="state" class="focus:outline-none px-3" placeholder="98603">
-                        </label>
-                        <label class="inline-flex w-2/4 border-gray-200 py-3">
-                            <span class="text-right px-2 xl:px-0 xl:text-none">Order Note</span>
-                            <input name="order_note" class="focus:outline-none px-3" placeholder="98603">
-                        </label>
-                       
-                    </div>
-                   
-                </section>
-            </form>
-        </div> {% endcomment %}
         <form method='post'>
-            {% csrf_token %}
-            <div class="form-row">
-                <div class="col form-group">
-                  <label for="">First Name</label>
-                  <input type="text" name="first_name" class="form-control" required>
-                </div>
-                <div class="col form-group">
-                  <label for="">Last Name</label>
-                  <input type="text" name="last_name" class="form-control" required>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col form-group">
-                  <label for="">Email</label>
-                  <input type="email" name="email" class="form-control" required>
-                </div>
-                <div class="col form-group">
-                  <label for="">Phone Number</label>
-                  <input type="text" name="phone" class="form-control" required>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col form-group">
-                  <label for="">Address Line 1</label>
-                  <input type="text" name="address1" class="form-control" required>
-                </div>
-                <div class="col form-group">
-                  <label for="">Address Line 2</label>
-                  <input type="text" name="address2" class="form-control">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col form-group">
-                  <label for="">City</label>
-                  <input type="text" name="city" class="form-control" required>
-                </div>
-                <div class="col form-group">
-                  <label for="">State</label>
-                  <input type="text" name="state" class="form-control" required>
-                </div>
-                <div class="col form-group">
-                  <label for="">Country</label>
-                  <input type="text" name="country" class="form-control" required>
-                </div>
-                </div>
-                <div class="form-row">
-                  <label for="">Order Note</label>
-                  <textarea name="order_note" rows="2" class="form-control"></textarea>
-                </div>
-
-                {% comment %} <button type="submit" class="btn btn-primary btn-block text-white" > Place Order </button> {% endcomment %}
-        
+            {% csrf_token %} 
         <div class="rounded-md">
             <section>
                 <h2 class="uppercase tracking-wide text-lg font-semibold text-white my-2">Payment Information</h2>
@@ -128,70 +30,80 @@
                             </label>
                         </div>
                         <div>
-                            <div class="mb-3">
-                                <label class="text-white font-semibold text-sm mb-2 ml-1">Name on card</label>
-                                <div>
-                                    <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="John Smith" type="text"/>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="text-white font-semibold text-sm mb-2 ml-1">Card number</label>
-                                <div>
-                                    <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="0000 0000 0000 0000" type="text"/>
-                                </div>
-                            </div>
-                            <div class="mb-3 -mx-2 flex items-end">
-                                <div class="px-2 w-1/4">
-                                    <label class="text-white font-semibold text-sm mb-2 ml-1">Expiration date</label>
+                            <div class="mb-3 -mx-2 flex items-center justify-between">
+                                <div class="px-2 w-full">
+                                    <label class="text-white font-semibold text-sm mb-2 ml-1">First Name</label>
                                     <div>
-                                        <select class="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer">
-                                            <option value="01">01 - January</option>
-                                            <option value="02">02 - February</option>
-                                            <option value="03">03 - March</option>
-                                            <option value="04">04 - April</option>
-                                            <option value="05">05 - May</option>
-                                            <option value="06">06 - June</option>
-                                            <option value="07">07 - July</option>
-                                            <option value="08">08 - August</option>
-                                            <option value="09">09 - September</option>
-                                            <option value="10">10 - October</option>
-                                            <option value="11">11 - November</option>
-                                            <option value="12">12 - December</option>
-                                        </select>
+                                        <input name="first_name" class="form-control text-black w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Enter Your Frist Name" type="text"required/>
                                     </div>
                                 </div>
-                                <div class="px-2 w-1/4">
-                                    <select class="form-select w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors cursor-pointer">
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2026">2026</option>
-                                        <option value="2027">2027</option>
-                                        <option value="2028">2028</option>
-                                        <option value="2029">2029</option>
-                                    </select>
-                                </div>
-                                <div class="px-2 w-1/4">
-                                    <label class="text-white font-semibold text-sm mb-2 ml-1">Security code</label>
+                                <div class="px-2 w-full">
+                                    <label class="text-white font-semibold text-sm mb-2 ml-1">Last Name</label>
                                     <div>
-                                        <input class="w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="000" type="text"/>
+                                        <input name="last_name" class="form-control text-black w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Enter Your Last Name" type="text"required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 -mx-2 flex items-center justify-between">
+                                <div class="px-2 w-full">
+                                    <label class="text-white font-semibold text-sm mb-2 ml-1">Email</label>
+                                    <div>
+                                        <input name="email" class="form-control text-black w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Email" type="text"required/>
+                                    </div>
+                                </div>
+                                <div class="px-2 w-full">
+                                    <label class="form-control text-white font-semibold text-sm mb-2 ml-1">Phone Number</label>
+                                    <div>
+                                        <input name="phone" class="w-full text-black px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Phone No" type="text"required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 -mx-2 flex items-center justify-between">
+                                <div class="px-2 w-full">
+                                    <label class="text-white font-semibold text-sm mb-2 ml-1">House No</label>
+                                    <div>
+                                        <input name="address1" class="form-control text-black w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="House No" type="text"required/>
+                                    </div>
+                                </div>
+                                <div class="px-2 w-full">
+                                    <label class="text-white font-semibold text-sm mb-2 ml-1">Area</label>
+                                    <div>
+                                        <input name="address2" class="form-control text-black w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Ares" type="text"required/>
+                                    </div>
+                                </div>
+                                <div class="px-2 w-full">
+                                    <label class="text-white font-semibold text-sm mb-2 ml-1">City</label>
+                                    <div>
+                                        <input name="city" class="form-control text-black w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="000" type="text"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 -mx-2 flex items-center justify-between">
+                                <div class="px-2 w-full">
+                                    <label class=" font-semibold text-sm mb-2 ml-1">State</label>
+                                    <div>
+                                        <input name="state" class="form-control text-black w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="State" type="text"required/>
+                                    </div>
+                                </div>
+                                <div class="px-2 w-full">
+                                    <label class="text-white font-semibold text-sm mb-2 ml-1">Country</label>
+                                    <div>
+                                        <input name="country" class="form-control text-black w-full px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Country" type="text"required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 -mx-2 ">
+                                <div class="px-2 w-full">
+                                    <label class=" font-semibold text-sm mb-2 ml-1">Order Note</label>
+                                    <div>
+                                        <textarea name="order_note"class="placeholder-black text-black form-control w-96 h-28 px-3 py-2 mb-1 border border-gray-200 rounded-md focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Write Something" type="text" required></textarea>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full p-3">
-                        <label for="type2" class="flex items-center cursor-pointer">
-                            <input type="radio" class="form-radio h-5 w-5 text-indigo-500" name="type" id="type2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" width="80" class="ml-3"/>
-                        </label>
-                    </div>
-                </div>
-                <div>
-                    <button class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-2 font-semibold"><i class="mdi mdi-lock-outline mr-1"></i> PAY NOW</button>
+                   
                 </div>
             </section>
         </div>
