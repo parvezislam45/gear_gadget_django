@@ -31,7 +31,7 @@ class="flex-no-wrap relative flex w-full items-center justify-between bg-black p
       </svg>
     </span>
   </button>
-  <h1 class='text-lg font-semibold px-5 text-white'>David Gear & Gadget</h1>
+  <h1 class='text-2xl font-bold px-5 text-amber-600'>Big Bazar Islami Comerce</h1>
   <div
   class="!visible mt-2 hidden flex-grow basis-[100%] items-center justify-center lg:mt-0 lg:!flex lg:basis-auto"
   id="navbarSupportedContent8"
@@ -45,7 +45,7 @@ class="flex-no-wrap relative flex w-full items-center justify-between bg-black p
       class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
       data-te-nav-item-ref>
       <a
-        class="active disabled:text-black/30= lg:px-2 [&.active]:text-white dark:[&.active]:text-white"
+        class="active disabled:text-black/30= lg:px-2 [&.active]:text-amber-600 dark:[&.active]:text-amber-600"
         aria-current="page"
         href="{% url 'home' %}"
         data-te-nav-link-ref
@@ -57,7 +57,7 @@ class="flex-no-wrap relative flex w-full items-center justify-between bg-black p
       class="mb-4 pl-2 lg:mb-0 lg:pl-0 lg:pr-1"
       data-te-nav-item-ref>
       <a
-        class="p-0 text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+        class="p-0 text-amber-600 transition duration-200 hover:text-amber-600 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-amber-600 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
         href="{% url 'store' %}"
         data-te-nav-link-ref
         >Store</a
@@ -70,7 +70,7 @@ class="flex-no-wrap relative flex w-full items-center justify-between bg-black p
       data-te-dropdown-ref>
       <!-- Dropdown -->
       <a
-        class="flex items-center text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+        class="flex items-center text-amber-600 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:amber-600 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
         href="#"
         type="button"
         id="dropdownMenuButton2"
@@ -204,8 +204,8 @@ class="flex-no-wrap relative flex w-full items-center justify-between bg-black p
     </div>
     {% else %}
     <div class="flex gap-5">
-      <a class="text-white font-bold" href="{% url 'login' %}">Login</a>
-      <a class="text-white font-bold" href="{% url 'account' %}">Register</a>
+      <a class="text-amber-600 font-bold" href="{% url 'login' %}">Login</a>
+      <a class="text-amber-600 font-bold" href="{% url 'account' %}">Register</a>
     </div>
     {% endif %}
   </div>
